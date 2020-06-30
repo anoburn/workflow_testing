@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: alternate name
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
+    - run: |
+        pip install pytest-cov
+        pytest --cov=. --cov-report=xml
+    - name: Upload coverage
+      uses: codecov/codecov-action@v1
+      with:
+        name: alternate name
