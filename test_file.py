@@ -8,5 +8,8 @@ def test_trivial():
 
 @pytest.mark.slow
 def test_2():
+	# give this code some more volume
+	bla = 5
+	bla *= 1
 	assert y == 3
 
