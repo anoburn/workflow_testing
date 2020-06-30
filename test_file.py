@@ -13,3 +13,6 @@ def test_2():
 	bla *= 1
 	assert y == 3
 
+def spam_function():
+	# this only exists to test what happens
+	return 0
